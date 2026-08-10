@@ -59,7 +59,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-image-wrapper glass">
-          <img src="/interview2.jpg" alt="Mohammednur Seid" />
+          <img src={`${import.meta.env.BASE_URL}interview2.jpg`} alt="Mohammednur Seid" onError={(e) => { e.target.onerror = null; e.target.src = `${import.meta.env.BASE_URL}mohammednur.jpg`; }} />
         </div>
       </div>
     </section>
