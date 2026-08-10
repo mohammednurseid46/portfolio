@@ -183,12 +183,13 @@ ul {
 }
 
 .nav-links a:hover, .theme-toggle-link:hover {
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
 }
 
 .nav-links a.active, .theme-toggle-link.active {
-  background: var(--text-primary);
-  color: var(--bg-color);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: #fff;
 }
 
 .nav-actions {
@@ -411,6 +412,18 @@ ul {
   background: var(--border-color);
   border-radius: 9999px;
   font-weight: 600;
+}
+
+.project-features {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.project-features li {
+  margin-bottom: 0.25rem;
+  list-style-type: disc;
 }
 
 /* Contact Section */
