@@ -60,17 +60,17 @@ const Services = () => {
   ];
 
   return (
-    <section id="skills" className="section">
-      <div className="container">
-        <h2 className="section-title">Technical Skills</h2>
-        <div className="services-grid">
+    <section id="skills" className="py-24 px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl mb-12 text-gradient inline-block font-bold">Technical Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
-            <div key={index} className="service-card glass">
-              <div className="service-icon">
+            <div key={index} className="glass p-10 rounded-3xl transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-primary)] group">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-[var(--accent-primary)] mb-6 bg-gradient-to-br from-[rgba(59,130,246,0.15)] to-[rgba(139,92,246,0.15)] group-hover:scale-110 transition-transform duration-300">
                 {skill.icon}
               </div>
-              <h3>{skill.title}</h3>
-              <p>{skill.desc}</p>
+              <h3 className="text-2xl font-bold mb-4">{skill.title}</h3>
+              <p className="text-[var(--text-secondary)]">{skill.desc}</p>
             </div>
           ))}
         </div>

@@ -2,13 +2,14 @@
   "name": "temp_react",
   "private": true,
   "version": "0.0.0",
-  "type": "module","scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist",
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
+  "type": "module",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "lucide-react": "^1.28.0",
     "react": "^19.2.7",
@@ -16,11 +17,15 @@
     "react-icons": "^5.7.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.6.1",
     "gh-pages": "^6.3.0",
     "oxlint": "^1.76.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
     "vite": "^8.1.5"
   }
 }

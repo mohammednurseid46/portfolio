@@ -7,7 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -18,15 +18,17 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className="min-h-screen font-sans">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Contact />
+      </main>
       
-      <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', borderTop: '1px solid var(--border-color)', marginTop: '4rem' }}>
+      <footer className="text-center py-8 text-[var(--text-secondary)] border-t border-[var(--border-color)] mt-16">
         <p>&copy; {new Date().getFullYear()} Mohammednur Seid. All rights reserved.</p>
       </footer>
     </div>
