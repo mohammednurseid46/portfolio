@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code, Database, Atom, Server } from 'lucide-react';
+import { SiFastapi, SiPostgresql, SiTypescript } from 'react-icons/si';
 
 const Services = () => {
   const skills = [
@@ -36,6 +37,21 @@ const Services = () => {
       title: "SQL & Databases",
       desc: "Relational databases including SQLite and Microsoft SQL Server management.",
       icon: <Database size={24} />
+    },
+    {
+      title: "PostgreSQL",
+      desc: "Relational database design, query optimization, indexing, and spatial data handling.",
+      icon: <SiPostgresql size={24} />
+    },
+    {
+      title: "TypeScript",
+      desc: "Type-safe web development, scalable frontend architectures, and robust interfaces.",
+      icon: <SiTypescript size={24} />
+    },
+    {
+      title: "Python & FastAPI",
+      desc: "High-performance asynchronous REST APIs, data validation, and backend service development.",
+      icon: <SiFastapi size={24} />
     },
     {
       title: "React JS",

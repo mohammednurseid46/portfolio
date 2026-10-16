@@ -23,13 +23,14 @@ const Navbar = ({ theme, toggleTheme }) => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 glass rounded-full flex justify-between items-center py-2">
-        <a href="#home" className="hidden lg:flex items-center gap-3 no-underline">
-          <span className="font-bold text-2xl font-['Plus_Jakarta_Sans']">MS</span>
-          <div className="flex flex-col items-start gap-0.5">
-            <span className="text-[0.65rem] font-bold tracking-widest text-[var(--text-secondary)] uppercase leading-none">PORTFOLIO</span>
-            <span className="text-[1.05rem] font-bold text-[var(--text-primary)] leading-tight">Mohammednur Seid</span>
-          </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 glass bg-white/90 dark:bg-black/80 text-gray-900 dark:text-gray-100 rounded-full flex justify-between items-center py-2">
+        <a href="/" className="flex shrink-0 items-center no-underline" aria-label="Mohammed-nur Seid homepage">
+          <img
+            src="/portfolio/logo1.jpg"
+            alt="Mohammed-nur Seid Logo"
+            title="Mohammed-nur Seid"
+            className="h-10 w-auto object-contain"
+          />
         </a>
         
         <ul className="flex flex-1 justify-center lg:flex-none gap-2 sm:gap-4 m-0 p-0 list-none items-center">

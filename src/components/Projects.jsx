@@ -1,4 +1,5 @@
 import React from 'react';
+import { Truck } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -8,6 +9,7 @@ const Projects = () => {
       tags: ["Flutter", "Dart", "Mobile"],
       link: "https://github.com/mohammednurseid46/FlutterQuickhelp",
       bgClass: "bg-blue-600",
+      image: "/portfolio/flutter.jpg",
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
     },
     {
@@ -19,11 +21,21 @@ const Projects = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
     },
     {
+      title: "DRM Transport System",
+      desc: "A full-stack transportation and logistics platform featuring spatial distance calculations, driver tracking, and route management.",
+      tags: ["Next.js", "node.js", "PostgreSQL", "PostGIS"],
+      link: "https://drm-transport-system.vercel.app/",
+      bgClass: "bg-teal-600",
+      image: "/portfolio/image.png",
+      icon: <Truck size={48} color="white" strokeWidth={1.5} />
+    },
+    {
       title: "Portfolio 1",
       desc: "A personal portfolio website highlighting my skills and projects.",
       tags: ["HTML", "CSS", "JS"],
       link: "https://mohammednurseid46.github.io/my-portfolio-2/",
       bgClass: "bg-emerald-500",
+      image: "/portfolio/port1.png",
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>,
       features: ["Responsive Design", "Custom CSS Styling", "Project Showcase"]
     },
@@ -33,6 +45,7 @@ const Projects = () => {
       tags: ["Web", "Design", "Portfolio"],
       link: "https://mohammednurseid46.github.io/MyPortfolio/",
       bgClass: "bg-purple-600",
+      image: "/portfolio/port2.png",
       icon: <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>,
       features: ["Modern UI", "Interactive Elements", "Clean Layout"]
     }
@@ -44,19 +57,27 @@ const Projects = () => {
         <h2 className="text-4xl md:text-5xl mb-12 text-gradient inline-block font-bold">Selected Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <a key={index} href={project.link} target="_blank" rel="noreferrer" className="block bg-[#111111] rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group no-underline">
+            <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="block cursor-pointer rounded-3xl overflow-hidden transition-all duration-300 hover:opacity-90 hover:-translate-y-2 hover:shadow-2xl group no-underline">
               <div className={`h-48 flex items-center justify-center relative overflow-hidden ${project.bgClass}`}>
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
-                <div className="transform group-hover:scale-110 transition-transform duration-500">
-                  {project.icon}
-                </div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                ) : (
+                  <div className="transform group-hover:scale-110 transition-transform duration-500">
+                    {project.icon}
+                  </div>
+                )}
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-6">{project.desc}</p>
+              <div className="p-6 bg-white text-black dark:bg-[#151515] dark:text-white">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">{project.desc}</p>
                 
                 {project.features && (
-                  <ul className="mb-6 pl-5 text-gray-400 text-sm list-disc">
+                  <ul className="mb-6 pl-5 text-gray-600 dark:text-gray-400 text-sm list-disc">
                     {project.features.map(feature => (
                       <li key={feature} className="mb-1">{feature}</li>
                     ))}
@@ -65,7 +86,7 @@ const Projects = () => {
                 
                 <div className="flex flex-row flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-gray-800 text-white text-xs font-medium rounded-full">
+                    <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-800 dark:bg-[#252525] dark:text-gray-300 text-xs font-medium rounded-full">
                       {tag}
                     </span>
                   ))}
